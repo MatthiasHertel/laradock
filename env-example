@@ -5,7 +5,7 @@
 ### Paths #################################################
 
 # Point to the path of your applications code on your host
-APP_CODE_PATH_HOST=../
+APP_CODE_PATH_HOST=../app
 
 # Point to where the `APP_CODE_PATH_HOST` should be in the container
 APP_CODE_PATH_CONTAINER=/var/www
@@ -134,8 +134,8 @@ WORKSPACE_INSTALL_IONCUBE=false
 WORKSPACE_INSTALL_MYSQL_CLIENT=false
 WORKSPACE_INSTALL_INOTIFY=false
 WORKSPACE_INSTALL_FSWATCH=false
-WORKSPACE_PUID=1000
-WORKSPACE_PGID=1000
+WORKSPACE_PUID=`id -u`
+WORKSPACE_PGID=`id-g`
 WORKSPACE_CHROME_DRIVER_VERSION=2.42
 WORKSPACE_TIMEZONE=UTC
 WORKSPACE_SSH_PORT=2222
@@ -191,8 +191,8 @@ PHP_WORKER_INSTALL_MYSQL_CLIENT=false
 PHP_WORKER_INSTALL_AMQP=false
 PHP_WORKER_INSTALL_GHOSTSCRIPT=false
 PHP_WORKER_INSTALL_SWOOLE=false
-PHP_WORKER_PUID=1000
-PHP_WORKER_PGID=1000
+PHP_WORKER_PUID=`id -u`
+PHP_WORKER_PGID=`id-g`
 
 ### NGINX #################################################
 
@@ -217,9 +217,9 @@ APACHE_DOCUMENT_ROOT=/var/www/
 
 ### MYSQL #################################################
 
-MYSQL_VERSION=latest
-MYSQL_DATABASE=default
-MYSQL_USER=default
+MYSQL_VERSION=5.7
+MYSQL_DATABASE=homestead
+MYSQL_USER=homestead
 MYSQL_PASSWORD=secret
 MYSQL_PORT=3306
 MYSQL_ROOT_PASSWORD=root
